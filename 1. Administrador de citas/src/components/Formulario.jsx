@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import uuid from "uuid/dist/v4";
+import uuid from "uuid/v4";
 import PropTypes from "prop-types"; // para documentar componentes al final, antes de exportar
 
 // creamos el Formulario, importando crearCita desde App.js
@@ -21,7 +21,7 @@ const Formulario = ({ crearCita }) => {
   // en el formulario. "e" es el evento. Al ser 1 solo parámetro, no requiere paréntesis.
   // e.target.name devuelve el campo en el que el usuario esta escribiendo.
   // e.target.value devuelve lo que el usuario escribió.
-  const actualizarState = (e) => {
+  const actualizarState = e => {
     // cita.mascota = e.target.value NO respeta las reglas de React, hay que usar la función actualizarCita() para
     // cambiar el estado actual del State.
     actualizarCita({
@@ -41,7 +41,7 @@ const Formulario = ({ crearCita }) => {
   const { mascota, propietario, fecha, hora, sintomas } = cita;
 
   // Cuando el usuario presiona agregar cita
-  const submitCita = (e) => {
+  const submitCita = e => {
     //Evitar el comportamiento default donde js manda al query stream por método get via url de la página
     e.preventDefault();
 
