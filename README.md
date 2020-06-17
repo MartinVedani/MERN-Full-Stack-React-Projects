@@ -6,3 +6,5 @@ Proyecto 1: Citas para Mascotas https://myreact-project1-pet-appointments.netlif
 Proyecto 2: Calculadora Presupuesto Semanal https://myreact-project2-weekly-budget-calculator.netlify.app/
 
 Proyecto 3: Cotizador de Seguros https://myreact-project3-insurance-pricer.netlify.app/
+
+Proyecto 4: API con Frases de Breaking Bad https://myreact-project4-breaking-bad-phrases-api.netlify.app/
