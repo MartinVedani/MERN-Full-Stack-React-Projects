@@ -8,3 +8,5 @@ Proyecto 2: Calculadora Presupuesto Semanal https://myreact-project2-weekly-budg
 Proyecto 3: Cotizador de Seguros https://myreact-project3-insurance-pricer.netlify.app/
 
 Proyecto 4: API con Frases de Breaking Bad https://myreact-project4-breaking-bad-phrases-api.netlify.app/
+
+Proyecto 5: API + Key para consultar el clima https://myreact-project5-weather-api.netlify.app/
