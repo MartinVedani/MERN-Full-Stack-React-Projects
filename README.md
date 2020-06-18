@@ -9,4 +9,4 @@ Proyecto 3: Cotizador de Seguros https://myreact-project3-insurance-pricer.netli
 
 Proyecto 4: API con Frases de Breaking Bad https://myreact-project4-breaking-bad-phrases-api.netlify.app/
 
-Proyecto 5: API + Key para consultar el clima https://myreact-project5-weather-api.netlify.app/
+Proyecto 5: API + Key para consultar el clima https://myreact-project5-weather-api-key.netlify.app/
