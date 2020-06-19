@@ -10,3 +10,5 @@ Proyecto 3: Cotizador de Seguros https://myreact-project3-insurance-pricer.netli
 Proyecto 4: API con Frases de Breaking Bad https://myreact-project4-breaking-bad-phrases-api.netlify.app/
 
 Proyecto 5: API + Key para consultar el clima https://myreact-project5-weather-api-key.netlify.app/
+
+Proyecto 6: Hooks Customizados para Capitalización de 100 Criptomonedas https://myreact-proj6-top100-cryptocurrency-market-capitalization.netlify.app/
