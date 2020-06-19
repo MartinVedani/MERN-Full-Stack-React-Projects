@@ -54,7 +54,6 @@ function App() {
     // Ejecutar llamado a la API otra vez con las elecciones del usuario traemos FULL DATA
     const cotizarCriptomoneda = async () => {
 
-      // const apiKey = 'fa3c52835cc9be34eeb698b76e795e863b149313448073a04ddb241abee5ba5c';
       // Multiple Symbols Full Data
       const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}` //&api_key=${apiKey}`;
 
