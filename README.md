@@ -12,3 +12,5 @@ Proyecto 4: API con Frases de Breaking Bad https://myreact-project4-breaking-bad
 Proyecto 5: API + Key para consultar el clima https://myreact-project5-weather-api-key.netlify.app/
 
 Proyecto 6: Hooks Customizados para Capitalización de 100 Criptomonedas https://myreact-proj6-top100-cryptocurrency-market-capitalization.netlify.app/
+
+Proyecto 7: Hooks Customizados para noticias https://myreact-proj7-custom-hooks-news-api.netlify.app/
