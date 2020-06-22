@@ -14,3 +14,5 @@ Proyecto 5: API + Key para consultar el clima https://myreact-project5-weather-a
 Proyecto 6: Hooks Customizados para Capitalización de 100 Criptomonedas https://myreact-proj6-top100-cryptocurrency-market-capitalization.netlify.app/
 
 Proyecto 7: Hooks Customizados para noticias https://myreact-proj7-custom-hooks-news-api.netlify.app/
+
+Proyecto 8: Buscador de Imágenes y Videos con Pagination https://myreact-proj8-pixabay-search-img-video-pagination.netlify.app/
