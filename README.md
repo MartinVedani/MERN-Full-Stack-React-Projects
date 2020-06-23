@@ -16,3 +16,5 @@ Proyecto 6: Hooks Customizados para Capitalización de 100 Criptomonedas https:/
 Proyecto 7: Hooks Customizados para noticias https://myreact-proj7-custom-hooks-news-api.netlify.app/
 
 Proyecto 8: Buscador de Imágenes y Videos con Pagination https://myreact-proj8-pixabay-search-img-video-pagination.netlify.app/
+
+Proyecxto 9: Buscador de Banda y Letras con 2 APIs asincrónicas https://myreact-proj9-two-async-band-lyrics-apis.netlify.app/
