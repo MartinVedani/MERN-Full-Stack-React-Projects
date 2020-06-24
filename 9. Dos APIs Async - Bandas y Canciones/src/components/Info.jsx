@@ -20,7 +20,7 @@ const Info = ({ info, artista }) => {
         <img src={strArtistThumb} alt='Logo Artista' />
         <p className='card-text'>Estilo / Style: {strStyle}</p>
         <p className='card-text'>Género / Genre: {strGenre}</p>
-        <p className='card-text'>Separada / Disbanded: {(strDisbanded == null || strDisbanded == '') ? 'No' : 'Yes'}</p>
+        <p className='card-text'>Separada / Disbanded: {(strDisbanded === null || strDisbanded === '') ? 'No' : 'Yes'}</p>
 
         <h2 className='card-text'>Biografía en Español:</h2>
         <p className='card-text'>{strBiographyES}</p>
@@ -30,7 +30,7 @@ const Info = ({ info, artista }) => {
 
         <p className='card-text'>
 
-          {(info.strFacebook == '' || info.strFacebook == null)
+          {(info.strFacebook === '' || info.strFacebook === null)
             ? null : (
               <a href={`https://${info.strFacebook}`} target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-facebook"></i>

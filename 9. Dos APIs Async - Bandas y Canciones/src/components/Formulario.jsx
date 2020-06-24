@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Formulario = ({ guardarBusquedaLetra }) => {
+const Formulario = ({ guardarBusquedaLetra, guardarLetra, guardarInfo }) => {
 
   const [busqueda, guardarBusqueda] = useState({
     artista: '',
@@ -24,6 +24,10 @@ const Formulario = ({ guardarBusquedaLetra }) => {
 
   const buscarInformacion = e => {
     e.preventDefault();
+
+    // De Existir, resetear búsquedas anteriores EXITOSAS
+    guardarLetra('');
+    guardarInfo({});
 
     //validamos
     if (artista.trim() === '' || cancion.trim() === '') {
@@ -106,6 +110,8 @@ const Formulario = ({ guardarBusquedaLetra }) => {
 
 Formulario.propTypes = {
   guardarBusquedaLetra: PropTypes.func.isRequired,
+  guardarLetra: PropTypes.func.isRequired,
+  guardarInfo: PropTypes.func.isRequired,
 }
 
 export default Formulario;
