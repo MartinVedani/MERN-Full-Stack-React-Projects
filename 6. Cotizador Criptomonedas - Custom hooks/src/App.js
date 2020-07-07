@@ -41,68 +41,70 @@ const Heading = styled.h1`
 
 function App() {
 
-  const [moneda, guardarMoneda] = useState('');
-  const [criptomoneda, guardarCriptomoneda] = useState('');
-  const [resultado, guardarResultado] = useState({});
-  const [cargando, guardarCargando] = useState(false);
+    const [moneda, guardarMoneda] = useState('');
+    const [criptomoneda, guardarCriptomoneda] = useState('');
+    const [resultado, guardarResultado] = useState({});
+    const [cargando, guardarCargando] = useState(false);
 
-  useEffect(() => {
+    useEffect(() => {
 
-    //evitamos la ejecución la primera v ez antes que el usuario haga sus elecciones
-    if (moneda === '') return;
+        //evitamos la ejecución la primera v ez antes que el usuario haga sus elecciones
+        if (moneda === '') return;
 
-    // Ejecutar llamado a la API otra vez con las elecciones del usuario traemos FULL DATA
-    const cotizarCriptomoneda = async () => {
+        // Ejecutar llamado a la API otra vez con las elecciones del usuario traemos FULL DATA
+        const cotizarCriptomoneda = async () => {
 
-      // Multiple Symbols Full Data
-      const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}` //&api_key=${apiKey}`;
+            const api_key = 'fa3c52835cc9be34eeb698b76e795e863b149313448073a04ddb241abee5ba5c';
 
-      const resultado = await axios.get(url);
+            // Multiple Symbols Full Data
+            const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}&api_key=${api_key}`;
 
-      //mostrar el spinner
-      guardarCargando(true);
+            const resultado = await axios.get(url);
 
-      //ocultar el spinner y mostrar el resultado
-      setTimeout(() => {
+            //mostrar el spinner
+            guardarCargando(true);
 
-        //cambiar el estado de cargando
-        guardarCargando(false);
+            //ocultar el spinner y mostrar el resultado
+            setTimeout(() => {
 
-        //guardar cotización
-        guardarResultado(resultado.data.DISPLAY[criptomoneda][moneda]);
+                //cambiar el estado de cargando
+                guardarCargando(false);
 
-      }, 3000);
-    }
+                //guardar cotización
+                guardarResultado(resultado.data.DISPLAY[criptomoneda][moneda]);
 
-    // llamamos a la función
-    cotizarCriptomoneda();
-  }, [moneda, criptomoneda]);
+            }, 3000);
+        }
 
-  const componente = (cargando) ? <Spinner /> : <Cotizacion resultado={resultado} />;
+        // llamamos a la función
+        cotizarCriptomoneda();
+    }, [moneda, criptomoneda]);
 
-  return (
-    <Contenedor>
-      <div>
-        <Imagen
-          src={imagen}
-          alt='imagen cripto'
-        />
-      </div>
+    const componente = (cargando) ? <Spinner /> : <Cotizacion resultado={resultado} />;
 
-      <div>
-        <Heading> Cotiza Criptomonedas al instante</Heading>
+    return (
+        <Contenedor>
+            <div>
+                <Imagen
+                    src={imagen}
+                    alt='imagen cripto'
+                />
+            </div>
 
-        <Formulario
-          guardarMoneda={guardarMoneda}
-          guardarCriptomoneda={guardarCriptomoneda}
-        />
+            <div>
+                <Heading> Cotiza Criptomonedas al instante</Heading>
 
-        {componente}
+                <Formulario
+                    guardarMoneda={guardarMoneda}
+                    guardarCriptomoneda={guardarCriptomoneda}
+                />
 
-      </div>
-    </Contenedor>
+                {componente}
 
-  );
+            </div>
+        </Contenedor>
+
+    );
 }
 
 export default App;
