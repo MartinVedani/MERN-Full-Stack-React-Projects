@@ -10,7 +10,9 @@ import {
     VALIDAR_FORMULARIO,
     CANCELAR_FORMULARIO,
     PROYECTO_ACTUAL,
-    ELIMINAR_PROYECTO
+    ELIMINAR_PROYECTO,
+    ELIMINAR_PROYECTO_ERROR,
+    CANCELAR_ELIMINAR_PROYECTO_ERROR
 } from '../../types';
 
 export default (state, action) => {
@@ -64,6 +66,18 @@ export default (state, action) => {
                 // queremos borrar).
                 proyecto: null,
                 // proyecto activo debe volver a null para que no quede anda activo.
+            }
+
+        case ELIMINAR_PROYECTO_ERROR:
+            return {
+                ...state,
+                eliminarProyectoError: true
+            }
+
+        case CANCELAR_ELIMINAR_PROYECTO_ERROR:
+            return {
+                ...state,
+                eliminarProyectoError: false
             }
 
         case PROYECTO_ERROR:

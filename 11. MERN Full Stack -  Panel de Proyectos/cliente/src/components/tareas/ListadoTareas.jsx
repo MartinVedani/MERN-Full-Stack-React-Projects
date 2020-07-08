@@ -10,7 +10,8 @@ const ListadoTareas = () => {
 
     // Obtener el state de proyectos
     const proyectosContext = useContext(proyectoContext);
-    const { proyecto, eliminarProyecto } = proyectosContext;
+    const { proyecto, eliminarProyecto, eliminarProyectoError, validarEliminarProyecto,
+        cancelarEliminarProyecto } = proyectosContext;
 
     // Obtener las tareas del proyecto en el state context de tarea
     const tareasContext = useContext(tareaContext);
@@ -25,6 +26,10 @@ const ListadoTareas = () => {
 
     // Eliminar proyecto
     const onClinkEliminar = () => {
+        if (tareasproyecto.length !== 0) {
+            validarEliminarProyecto();
+            return;
+        }
         eliminarProyecto(proyectoActual._id)
     }
 
@@ -57,11 +62,35 @@ const ListadoTareas = () => {
                 }
             </ul>
 
-            <button
-                type='button'
-                className='btn btn-eliminar'
-                onClick={onClinkEliminar}
-            >Eliminar Proyecto &times;</button>
+            {
+                eliminarProyectoError ? (
+                    <Fragment>
+                        <p className='mensaje error'>No se puede eliminar un proyecto con tareas existentes </p>
+
+                        <div className='contenedor-input'>
+                            <button
+                                type='button'
+                                className='btn btn-eliminar'
+                                onClick={onClinkEliminar}
+                            >Eliminar Proyecto &times;</button>
+
+                            <button
+                                type='button'
+                                className='btn btn-cancelar'
+                                onClick={cancelarEliminarProyecto}
+                            >Cancelar</button>
+                        </div>
+
+                    </Fragment>
+
+                ) : (
+
+                        <button
+                            type='button'
+                            className='btn btn-eliminar'
+                            onClick={onClinkEliminar}
+                        >Eliminar Proyecto &times;</button>
+                    )}
 
         </Fragment>
     );

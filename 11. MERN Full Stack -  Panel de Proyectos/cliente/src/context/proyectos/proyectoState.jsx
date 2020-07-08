@@ -11,7 +11,9 @@ import {
     VALIDAR_FORMULARIO,
     CANCELAR_FORMULARIO,
     PROYECTO_ACTUAL,
-    ELIMINAR_PROYECTO
+    ELIMINAR_PROYECTO,
+    ELIMINAR_PROYECTO_ERROR,
+    CANCELAR_ELIMINAR_PROYECTO_ERROR
 } from '../../types';
 
 const ProyectoState = props => {
@@ -24,7 +26,8 @@ const ProyectoState = props => {
         formulario: false,
         errorformulario: false,
         proyecto: null,
-        mensaje: null
+        mensaje: null,
+        eliminarProyectoError: false
     }
 
     // Dispatch para ejecutar las acciones
@@ -112,6 +115,20 @@ const ProyectoState = props => {
         })
     }
 
+    //  Marcar error si haya tareas existente al tratar de eliminar un proyecto
+    const validarEliminarProyecto = () => {
+        dispatch({
+            type: ELIMINAR_PROYECTO_ERROR
+        })
+    }
+
+    //  Cancelar error si haya tareas existente al tratar de eliminar un proyecto
+    const cancelarEliminarProyecto = () => {
+        dispatch({
+            type: CANCELAR_ELIMINAR_PROYECTO_ERROR
+        })
+    }
+
     // Elimina un proyecto
     const eliminarProyecto = async proyectoId => {
 
@@ -144,13 +161,16 @@ const ProyectoState = props => {
                 errorformulario: state.errorformulario,
                 proyecto: state.proyecto,
                 mensaje: state.mensaje,
+                eliminarProyectoError: state.eliminarProyectoError,
                 mostrarFormulario,
                 obtenerProyectos,
                 agregarProyecto,
                 mostrarError,
                 cancelarFormulario,
                 proyectoActual,
-                eliminarProyecto
+                eliminarProyecto,
+                validarEliminarProyecto,
+                cancelarEliminarProyecto
             }}
         >
             {props.children}
