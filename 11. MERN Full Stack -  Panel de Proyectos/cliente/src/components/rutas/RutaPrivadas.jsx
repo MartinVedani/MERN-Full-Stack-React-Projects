@@ -5,8 +5,8 @@ import AuthContext from '../../context/autenticacion/authContext';
 // Si no hay un usuario autenticado, vamos a proteger el proyecto enviando al usuario
 // de regreso a la pagina principal de login.
 
-// Para esto, creamos un higher order component (Un componente que toma otro componente dentro de sí mismo junto con la copia
-// de los props que podrán ser utilizados por el componente hijo).
+// Para esto, creamos un higher order component (Un componente que toma otro componente dentro de sí mismo junto 
+// con la copia de los props que podrán ser utilizados por el componente hijo).
 const RutaPrivada = ({ component: Component, ...props }) => {
 
     const authContext = useContext(AuthContext);
